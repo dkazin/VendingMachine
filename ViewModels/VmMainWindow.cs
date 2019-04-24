@@ -97,19 +97,6 @@ namespace VendingMachine.ViewModels
                     {
                         machine.walletDeposit.Add(new Pack() { Coin = ListCoins.Coins[value], Count = 1 });
                         buyer.wallet.ListPack[value].Dec();
-
-                        //foreach (var i in shopWindow)
-                        //{
-                        //    if (i.Cost > Deposit)
-                        //    {
-                        //        i.Disabled();
-                        //    }
-                        //    else
-                        //    {
-                        //        i.Enabled();
-                        //    }
-                        //}
-
                         UpdateWindow();
                     }
                 }
@@ -122,12 +109,6 @@ namespace VendingMachine.ViewModels
         public void GetDeposit()
         {
             buyer.wallet.Add(machine.walletDeposit.GetAllMoney());
-
-            //foreach (var i in shopWindow)
-            //{
-            //    i.Disabled();
-            //}
-
             UpdateWindow();
         }
 
@@ -188,7 +169,6 @@ namespace VendingMachine.ViewModels
             a = window.machineMoney.ItemsSource;
             window.machineMoney.ItemsSource = null;
             window.machineMoney.ItemsSource = a;
-
 
             a = window.produsts.ItemsSource;
             window.produsts.SelectedIndex = -1;
